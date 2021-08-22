@@ -17,6 +17,7 @@ import com.google.android.gms.ads.LoadAdError;
 
 interface BannerListener {
     void onBannerLoaded();
+
     void onBannerFailedToLoad(int errorCode);
 }
 
@@ -36,7 +37,7 @@ public class Banner {
         this.adRequest = adRequest;
         this.defaultBannerListener = defaultBannerListener;
         this.bannerSize = bannerSize;
-                
+
         AddBanner(id, (isOnTop ? Gravity.TOP : Gravity.BOTTOM), getAdSize(bannerSize), new AdListener() {
             @Override
             public void onAdLoaded() {
@@ -67,8 +68,7 @@ public class Banner {
         Log.d("godot", "AdMob: Show Banner");
     }
 
-    public void move(final boolean isOnTop)
-    {
+    public void move(final boolean isOnTop) {
         if (layout == null || adView == null || adParams == null) {
             return;
         }
@@ -102,7 +102,7 @@ public class Banner {
                 FrameLayout.LayoutParams.WRAP_CONTENT
         );
         adParams.gravity = gravity;
-        
+
         // Create new view & set old params
         adView = new AdView(activity);
         adView.setAdUnitId(id);

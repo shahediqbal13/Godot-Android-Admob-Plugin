@@ -133,6 +133,8 @@ public class GodotAdMob extends GodotPlugin {
             extras.putString("npa", "1");
         }
 
+        MobileAds.initialize(activity);
+
         Log.d("godot", "AdMob: init with content rating options");
     }
 

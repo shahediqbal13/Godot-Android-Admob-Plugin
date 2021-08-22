@@ -1,15 +1,15 @@
 apply plugin: 'com.android.library'
 
-ext.pluginVersionCode = 4
-ext.pluginVersionName = "5.0.0"
+ext.pluginVersionCode = 5
+ext.pluginVersionName = "6.0.0"
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 29
+        minSdkVersion 19
+        targetSdkVersion 30
         versionCode pluginVersionCode
         versionName pluginVersionName
 
@@ -33,13 +33,13 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compileOnly project(':godot-lib.release')
-    implementation 'com.google.android.gms:play-services-ads:19.3.0'
+    compileOnly files('../godot-lib.release/godot-lib.release.aar')
+    implementation 'com.google.android.gms:play-services-ads:20.2.0'
 
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
